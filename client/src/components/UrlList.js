@@ -1,6 +1,6 @@
 import React from 'react'
 
-const UrlList = () => {
+const UrlList = ({ links }) => {
     return (
         <div>
             <table className="table table-striped table-responsive">
@@ -12,12 +12,13 @@ const UrlList = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><a href="https://facebook.com/YousifAbozid">
-                            https://facebook.com/YousifAbozid</a></td>
-                        <td><a href="/12345">12345</a></td>
-                        <td>10</td>
-                    </tr>
+                    {links.map((link) => (
+                        <tr key={link._id}>
+                            <td><a href={link.full}>{link.full}</a></td>
+                            <td><a href={link.short}>{link.short}</a></td>
+                            <td>{link.clicks}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>

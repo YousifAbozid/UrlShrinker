@@ -1,17 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { createLink } from '../api'
 
-const Form = () => {
-    const [input, setInput] = useState('')
+const Form = ({ input, setInput }) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
 
-        await createLink({
-            full: input
-        })
-
-        setInput('')
+        await createLink({ full: input })
+            .then(() => setInput(''))
+            .catch((error) => console.log(error))
     }
 
     return (
