@@ -6,6 +6,6 @@ app.use('/', (request, response) => {
     response.send('Hello Friend')
 })
 
-app.listen(process.env.PORT || 5000, () => {
- console.log('server running in port 5000')
+app.listen(process.env.PORT || 3001, () => {
+ console.log('server running in port 3001')
 })
