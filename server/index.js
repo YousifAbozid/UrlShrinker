@@ -13,10 +13,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cors())
 app.use(express.static('build'))
 
-app.use('/', (request, response) => {
-    response.send('Hello Friend')
-})
-
 app.use('/links', linksRoutes)
 
 const PORT = process.env.PORT || 3001

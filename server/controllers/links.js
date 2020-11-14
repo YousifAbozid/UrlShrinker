@@ -12,8 +12,9 @@ export const getLinks = async (request, response) => {
 
 export const postLink = async (request, response) => {
     const body = request.body
+    
     try {
-        const postUrl = await UrlSchema.create({ full: body.fullUrl })
+        const postUrl = await UrlSchema.create(body)
 
         response.status(201).json(postUrl)
     } catch (error) {
