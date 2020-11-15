@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import linksRoutes from './routes/links.js'
+import linkRoutes from './routes/link.js'
 
 const app = express()
 dotenv.config()
@@ -14,6 +15,7 @@ app.use(cors())
 app.use(express.static('build'))
 
 app.use('/links', linksRoutes)
+app.use('/', linkRoutes)
 
 const PORT = process.env.PORT || 3001
 

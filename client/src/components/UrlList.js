@@ -14,8 +14,8 @@ const UrlList = ({ links }) => {
                 <tbody>
                     {links.map((link) => (
                         <tr key={link._id}>
-                            <td><a href={link.full}>{link.full}</a></td>
-                            <td><a href={link.short}>{link.short}</a></td>
+                            <td><a href={link.full} rel="noreferrer" target="_blank">{link.full}</a></td>
+                            <td><a href={link.short} rel="noreferrer" target="_blank">{link.short}</a></td>
                             <td>{link.clicks}</td>
                         </tr>
                     ))}
